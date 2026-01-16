@@ -63,5 +63,3 @@ print(anotherCar.carInfo())
 #In this example, the __init__() method initializes the make, model, and year attributes of the Car object when it is created. Each object can have different values for these attributes, allowing for more flexibility and customization.
 
 
-
-
