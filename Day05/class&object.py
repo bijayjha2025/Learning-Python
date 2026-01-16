@@ -29,3 +29,39 @@ print(myDog.info())
 secondDog = Animal() #secondDog is another object (instance) of the class Animal
 print(secondDog.bark())
 print(secondDog.info())
+
+#Both myDog and secondDog are separate objects of the Animal class, each with its own set of attributes and methods.
+
+#Modifying attributes of an object
+myDog.color = "White"
+print(myDog.info()) #only changed for myDog object, secondDog remains unchanged
+secondDog.age= 3
+print(secondDog.info()) #only changed for secondDog object, myDog remains unchanged
+myDog.breed = "Labrador"
+print(myDog.info())
+
+#In this way, classes and objects in Python allow us to create structured and reusable code that models real-world entities and their behaviors and alteration can be done on a per-object basis without affecting other objects of the same class.
+
+#Important function: _init_() - special method in Python classes, known as the constructor. It is automatically called when an object of the class is created. The primary purpose of the __init__() method is to initialize the attributes of the newly created object with specific values.
+
+class Car:
+    def __init__(self, make, model, year):  #here make, model, year are parameters while self is the instance, meaning the object being created, other words can be used in place of self but by convention self is used
+
+        self.make = make      #instance attribute
+        self.model = model    #instance attribute
+        self.year = year      #instance attribute
+
+    def carInfo(self): #method to display car information
+        return f"{self.year} {self.make} {self.model}"
+    
+myFavoriteCar = Car("Toyota", "Camry", 2020) #Creating an object of the Car class and passing values to the __init__ method
+print(myFavoriteCar.carInfo()) #Calling the carInfo method to display car information
+
+anotherCar = Car("Honda", "Civic", 2019)
+print(anotherCar.carInfo())
+
+#In this example, the __init__() method initializes the make, model, and year attributes of the Car object when it is created. Each object can have different values for these attributes, allowing for more flexibility and customization.
+
+
+
+
