@@ -63,3 +63,27 @@ print(bag.showBrand())
 
 #In this example, both Shoe and Bag classes override the showBrand method from the Brands class. When we call showBrand on instances of Shoe and Bag, it executes the respective overridden methods, demonstrating polymorphism.
 
+#4. Abstraction - Hiding the complex implementation details and showing only the essential features of the object. This helps to reduce complexity and increase efficiency. In Python, abstraction can be achieved using abstract classes and interfaces (using the abc module).
+
+from abc import ABC, abstractmethod
+class Device(ABC):  #Abstract base class
+    @abstractmethod
+    def deviceInfo(self):  #Abstract method
+        pass
+
+class Laptop(Device):  #Derived class
+    def deviceInfo(self):  #Implementing the abstract method
+        return "This is a laptop."
+    
+class Smartphone(Device):  #Derived class
+    def deviceInfo(self):  #Implementing the abstract method
+        return "This is a smartphone."
+    
+laptop = Laptop()
+smartphone = Smartphone()
+print(laptop.deviceInfo())
+print(smartphone.deviceInfo())
+
+#In this example, Device is an abstract base class with an abstract method deviceInfo. The derived classes Laptop and Smartphone implement the abstract method. We cannot create an instance of the abstract class directly, but we can create instances of the derived classes that provide concrete implementations of the abstract methods. This demonstrates abstraction by hiding the implementation details and exposing only the necessary interface.
+
+#These four principles of OOP - Encapsulation, Inheritance, Polymorphism, and Abstraction - help in creating well-structured, modular, and maintainable code in Python. They are pillars of OOP and are widely used in software development to model real-world entities and their interactions effectively.
